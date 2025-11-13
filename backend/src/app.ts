@@ -32,9 +32,8 @@ const whitelist = [
   'http://localhost:5173', // Desarrollo de Frontend (Vite)
   'http://localhost',      // Frontend de Producción (Docker con Nginx en puerto 80)
   'http://localhost:3000',
-  process.env.FRONTEND_URL,
-  process.env.VITE_API_BASE_URL
-];
+  process.env.FRONTEND_URL
+].filter(Boolean); // Filtra valores undefined/null
 
 // Configuración de CORS
 const corsOptions = {
