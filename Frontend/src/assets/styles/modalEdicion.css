@@ -1,0 +1,530 @@
+/* Modales de edición y detalles */
+.modal-edicion .modal-content {
+  background-color: none;
+  border: none;
+  border-radius: none;
+}
+
+/* Header */
+.modal-edicion-header {
+  background-color: var(--color-fondo);
+  border-bottom: 1px solid var(--color-acento);
+}
+
+.modal-edicion-header .btn-close {
+  background-color: var(--color-gris);
+  color: #000;
+  opacity: 1;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.modal-edicion-header .btn-close:hover {
+  background-color: var(--color-gris);
+  color: #000;
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.modal-edicion-header .btn-close:focus {
+  background-color: var(--color-gris);
+  color: #000;
+  opacity: 1;
+  box-shadow: none;
+}
+
+.modal-edicion-header .btn-close:active {
+  background-color: var(--color-acento);
+  color: #000;
+  transform: scale(0.95);
+}
+
+.modal-edicion-header .btn-close::before {
+  content: "×";
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.modal-edicion-title {
+  color: var(--color-acento);
+}
+
+/* label */
+.modal-edicion-label strong {
+  color: rgba(255, 204, 0, 0.901);
+}
+
+
+
+/* Body */
+.modal-edicion-body {
+  background-color: var(--color-gris);
+}
+
+/* Footer */
+.modal-edicion-footer {
+  background-color: var(--color-gris);
+  border-top: 1px solid var(--color-acento);
+}
+
+/* Secciones */
+.modal-edicion-seccion {
+  margin-bottom: 1.5rem;
+}
+
+.modal-edicion-seccion-titulo {
+  color: var(--color-acento);
+  border-bottom: 2px solid var(--color-acento);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Vehículos */
+.modal-edicion-vehiculos-container {
+  border-radius: 6px;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.modal-edicion-vehiculo-item {
+  color: rgba(255, 255, 255, 0.448);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.97rem;
+}
+
+.modal-edicion-vehiculo-patente {
+  min-width: 80px;
+  font-weight: bold;
+}
+
+.modal-edicion-vehiculo-select {
+  max-width: 130px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+/* Información personal */
+.modal-edicion-info-personal {
+  margin-bottom: 1.5rem;
+}
+
+.modal-edicion-info-personal p {
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.448)
+}
+
+.modal-edicion-info-personal strong {
+  color: rgba(255, 204, 0, 0.901)
+}
+
+/* Reservas */
+.modal-edicion-reservas-container {
+  margin-top: 1rem;
+}
+
+.modal-edicion-reservas-vacio {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: rgba(108, 117, 125, 0.1);
+  border-radius: 5px;
+}
+
+.modal-edicion-reservas-vacio i {
+  font-size: 2rem;
+  color: #6c757d;
+}
+
+.modal-edicion-reservas-vacio p {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  color: #6c757d;
+}
+
+.modal-edicion-reserva-item {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 204, 0, 0.1);
+  border: 1px solid rgba(255, 204, 0, 0.3);
+  border-radius: 5px;
+}
+
+.modal-edicion-reserva-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-edicion-reserva-fecha {
+  font-weight: bold;
+}
+
+.modal-edicion-reserva-servicio {
+  color: #6c757d;
+}
+
+.modal-edicion-reserva-observaciones {
+  margin-top: 0.25rem;
+  display: block;
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+/* Rol deshabilitado */
+.modal-edicion-rol-disabled {
+  background-color: var(--color-gris);
+}
+
+/* Texto ayuda */
+.modal-edicion-texto-ayuda {
+  color: #979fa5;
+}
+
+/* Botones */
+.modal-edicion-boton-guardar {
+  background-color: var(--color-acento);
+  border-color: var(--color-acento);
+  color: #222;
+}
+
+.modal-edicion-boton-guardar:hover {
+  background-color: var(--color-acento);
+  border-color: var(--color-acento);
+  color: #222;
+}
+
+.modal-edicion-boton-guardar:disabled {
+  background-color: var(--color-acento);
+  border-color: var(--color-acento);
+  color: #222;
+  opacity: 0.6;
+}
+
+.modal-edicion-footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.modal-edicion-footer .modal-edicion-boton-cerrar {
+    background-color: var(--color-gris);
+    border: 1px solid var(--color-acento);
+    color: var(--color-texto);
+    transition: all 0.3s;
+}
+
+.modal-edicion-footer .modal-edicion-boton-cerrar:hover {
+    background-color: rgba(255, 204, 0, 0.1);
+    border-color: var(--color-acento);
+    color: var(--color-texto);
+}
+
+.modal-edicion-footer .modal-edicion-boton-cerrar:focus {
+    background-color: var(--color-gris);
+    border: 1px solid var(--color-acento);
+    color: var(--color-texto);
+    box-shadow: none;
+}
+
+.modal-edicion-footer .modal-edicion-boton-cerrar:active {
+    background-color: var(--color-acento);
+    color: #000;
+    transform: scale(0.98);
+}
+
+.modal-edicion-footer .modal-edicion-boton-cerrar:focus-visible {
+    background-color: var(--color-gris);
+    border: 1px solid var(--color-acento);
+    color: var(--color-texto);
+    box-shadow: none;
+}
+
+
+/* Spinner */
+.modal-edicion-spinner {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+/* Detalle vehículo */
+.modal-edicion-detalle-vehiculo {
+  margin-bottom: 1rem;
+}
+
+.modal-edicion-detalle-vehiculo h5 {
+  color: var(--color-acento);
+  border-bottom: 2px solid var(--color-acento);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal-edicion-detalle-vehiculo ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.modal-edicion-detalle-vehiculo li {
+  margin-bottom: 0.5rem;
+  color: var(--color-texto);
+}
+
+.modal-edicion-detalle-vehiculo b {
+  color: var(--color-acento);
+  margin-right: 0.5rem;
+}
+
+.modal-edicion-detalle-vehiculo span {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.modal-edicion-detalle-dueno {
+  margin-top: 1.5rem;
+}
+
+.modal-edicion-detalle-dueno h5 {
+  color: var(--color-acento);
+  border-bottom: 2px solid var(--color-acento);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal-edicion-detalle-dueno ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.modal-edicion-detalle-dueno li {
+  margin-bottom: 0.5rem;
+  color: var(--color-texto);
+}
+
+.modal-edicion-detalle-dueno b {
+  color: var(--color-acento);
+  margin-right: 0.5rem;
+}
+
+.modal-edicion-detalle-dueno span {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+
+.modal-edicion-boton-historial-modal {
+  background-color: rgba(94, 94, 94, 0.78);
+  border-color: var(--color-acento);
+  color: white;
+  transition: all 0.3s;
+}
+
+.modal-edicion-boton-historial-modal:hover {
+  background-color: rgba(94, 94, 94, 0.78);
+  border-color: var(--color-acento);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.modal-edicion-boton-historial-modal:focus {
+  background-color: rgba(94, 94, 94, 0.78);
+  border-color: var(--color-acento);
+  color: white;
+  box-shadow: none;
+}
+
+.modal-edicion-boton-historial-modal.btn:active {
+    background-color: var(--color-acento);
+    border-color: var(--color-acento);
+  color: black;
+  transform: scale(0.98);
+}
+
+.modal-edicion-texto-muted {
+  color: #6c757d;
+}
+
+/* Input */
+.modal-edicion .misvehiculos-modal-control {
+  background-color: var(--color-gris);
+  border: 1px solid var(--color-acento);
+  color: var(--color-texto);
+  padding: 0.75rem;
+  border-radius: 5px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.modal-edicion .misvehiculos-modal-control:focus {
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, 0.25);
+  background-color: var(--color-gris);
+  color: var(--color-texto);
+}
+
+.modal-edicion .misvehiculos-modal-control::placeholder {
+  color: #888;
+  opacity: 0.7;
+}
+
+.modal-edicion .misvehiculos-modal-control[readonly] {
+  opacity: 0.7;
+}
+
+/* Historial accordion */
+
+.historial-servicios-container {
+  margin-top: 1rem;
+}
+
+.historial-info-text {
+  color: rgba(255, 204, 0, 0.7);
+  font-size: 0.95rem;
+}
+
+.historial-info-text strong {
+  color: var(--color-acento);
+  font-weight: 700;
+}
+
+.historial-accordion-item {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 204, 0, 0.3);
+  margin-bottom: 0.75rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.historial-accordion-item:last-child {
+  margin-bottom: 0;
+}
+
+.historial-accordion-header {
+  background-color: rgba(255, 204, 0, 0.05);
+}
+
+.historial-accordion-header button {
+  background-color: transparent;
+  color: var(--color-texto);
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+}
+
+.historial-accordion-header button:not(.collapsed) {
+  background-color: rgba(255, 204, 0, 0.1);
+  color: var(--color-acento);
+}
+
+.historial-accordion-header button:focus {
+  box-shadow: none;
+  border-color: var(--color-acento);
+}
+
+.historial-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.historial-servicio-nombre {
+  font-size: 1.05rem;
+  color: var(--color-acento);
+  font-weight: 700;
+}
+
+.historial-fecha-badge {
+  background: rgba(255, 204, 0, 0.2);
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--color-acento);
+  white-space: nowrap;
+}
+
+.historial-accordion-body {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1.25rem;
+}
+
+.historial-detalle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.historial-detalle-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid rgba(255, 204, 0, 0.5);
+  border-radius: 4px;
+}
+
+.historial-detalle-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.historial-detalle-item i {
+  color: var(--color-acento);
+  font-size: 1.1rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.historial-detalle-item strong {
+  color: var(--color-acento);
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.historial-detalle-item span {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-edicion-vehiculo-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .modal-edicion-vehiculo-select {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .modal-edicion-reserva-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .historial-header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .historial-detalle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .historial-detalle-item.full-width {
+    grid-column: 1;
+  }
+}

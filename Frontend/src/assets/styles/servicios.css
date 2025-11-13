@@ -1,0 +1,448 @@
+/* Servicios */
+.servicios-page {
+  background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+  min-height: 100vh;
+}
+
+/* Loading */
+.servicios-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+}
+
+/* Hero */
+.servicios-hero {
+  position: relative;
+  padding: 6rem 2rem 4rem;
+  background: linear-gradient(135deg, rgba(255, 204, 0, 0.1), rgba(0, 0, 0, 0.9)),
+              url('/mecanico-auto.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.servicios-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.8) 0%, 
+    rgba(255, 204, 0, 0.1) 50%, 
+    rgba(0, 0, 0, 0.9) 100%);
+  pointer-events: none;
+}
+
+.servicios-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 50%, rgba(255, 204, 0, 0.15), transparent 60%);
+}
+
+.servicios-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.servicios-hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.servicios-hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+}
+
+.btn-servicios-hero {
+  background: linear-gradient(135deg, var(--color-acento), #e6b800);
+  color: #000;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  box-shadow: 0 8px 24px rgba(255, 204, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-servicios-hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-servicios-hero:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.btn-servicios-hero:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(255, 204, 0, 0.5);
+}
+
+/* Contenido */
+.servicios-main-section {
+  padding: 5rem 2rem;
+  background: #0a0a0a;
+}
+
+/* Media container */
+.servicios-media-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 100px;
+}
+
+.servicios-carousel-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 204, 0, 0.2);
+  background: #1a1a1a;
+}
+
+.servicios-carousel {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.servicios-carousel-image {
+  border-radius: 0;
+}
+
+/* Carrusel */
+.servicios-carousel .carousel-control-prev,
+.servicios-carousel .carousel-control-next {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 204, 0, 0.9);
+  border-radius: 50%;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.servicios-carousel .carousel-control-prev {
+  left: 15px;
+}
+
+.servicios-carousel .carousel-control-next {
+  right: 15px;
+}
+
+.servicios-carousel .carousel-control-prev:hover,
+.servicios-carousel .carousel-control-next:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.servicios-carousel .carousel-control-prev-icon,
+.servicios-carousel .carousel-control-next-icon {
+  filter: invert(1);
+}
+
+.servicios-carousel .carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 204, 0, 0.5);
+  border: 2px solid rgba(255, 204, 0, 0.3);
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+.servicios-carousel .carousel-indicators button.active {
+  background-color: var(--color-acento);
+  transform: scale(1.2);
+}
+
+/* Video */
+.servicios-video-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 204, 0, 0.2);
+  background: #1a1a1a;
+}
+
+.servicios-video-placeholder {
+  aspect-ratio: 16/9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(40, 40, 40, 0.9), rgba(30, 30, 30, 0.9));
+  padding: 3rem;
+  text-align: center;
+}
+
+.video-icon {
+  font-size: 4rem;
+  color: var(--color-acento);
+  margin-bottom: 1rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.video-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.servicios-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Lista servicios */
+.servicios-list-container {
+  padding-left: 2rem;
+}
+
+.servicios-list-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-acento);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.5px;
+}
+
+.servicios-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Grid servicios */
+.servicios-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  max-width: 100%; 
+}
+
+/* Beneficios */
+.servicios-benefits-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, rgba(255, 204, 0, 0.05), rgba(0, 0, 0, 0.8));
+  position: relative;
+}
+
+.benefits-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: -0.5px;
+}
+
+.benefit-card {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, rgba(40, 40, 40, 0.9), rgba(30, 30, 30, 0.9));
+  border: 2px solid rgba(255, 204, 0, 0.2);
+  border-radius: 16px;
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-acento);
+  box-shadow: 0 20px 40px rgba(255, 204, 0, 0.25);
+}
+
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--color-acento), #e6b800);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2.5rem;
+  color: #000;
+  box-shadow: 0 10px 30px rgba(255, 204, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+  transform: rotate(5deg) scale(1.1);
+}
+
+.benefit-card h3 {
+  color: var(--color-acento);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.3px;
+}
+
+.benefit-card p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .servicios-media-container {
+    position: static;
+    margin-bottom: 3rem;
+  }
+  
+  .servicios-list-container {
+    padding-left: 0;
+  }
+
+  .servicios-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .servicios-hero {
+    padding: 4rem 1.5rem 3rem;
+  }
+  
+  .servicios-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .servicios-hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .btn-servicios-hero {
+    font-size: 1rem;
+    padding: 0.85rem 2rem;
+  }
+  
+  .servicios-main-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .servicios-list-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .servicios-cards-wrapper {
+    gap: 1.5rem;
+  }
+
+  .servicios-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .servicios-benefits-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .benefits-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .benefit-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .benefit-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+  
+  .benefit-card h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .servicios-hero-title {
+    font-size: 2rem;
+  }
+  
+  .servicios-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .servicios-list-title {
+    font-size: 1.5rem;
+  }
+  
+  .benefits-title {
+    font-size: 1.75rem;
+  }
+  
+  .servicios-video-placeholder {
+    padding: 2rem;
+  }
+  
+  .video-icon {
+    font-size: 3rem;
+  }
+  
+  .video-text {
+    font-size: 1rem;
+  }
+}

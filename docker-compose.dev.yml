@@ -1,0 +1,29 @@
+services:
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+      target: development # Usa la etapa 'development'
+    env_file:
+      - ./Frontend/.env # Carga las variables desde la carpeta del frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./Frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: builder # Usa la etapa 'builder' para desarrollo
+    command: npm run dev
+    env_file:
+      - ./backend/.env # Carga las variables desde la carpeta del backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules

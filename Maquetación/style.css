@@ -1,0 +1,303 @@
+:root {
+  --color-fondo: #000;         /* fondo negro */
+  --color-texto: #fff;         /* letras blancas */
+  --color-acento: #ffcc00;     /* amarillo Renault */
+  --color-gris: #333;
+  --espaciado: 1rem;
+  --fuente-principal: 'Arial', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.header {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--espaciado) 2rem;
+  border-bottom: 1px solid var(--color-acento);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo { /*Logo renault*/
+  width: 80px;
+  height: auto;
+}
+
+.marca { /* Nombre Empresa Lubricentro renault */
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: var(--color-acento);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.nav a { 
+  text-decoration: none;
+  color: var(--color-texto);
+  font-weight: bold;
+  transition: color 0.3s;/*Tiempo de retraso para que aparezca el color*/
+}
+
+.nav a:hover {
+  color: var(--color-acento);
+}
+
+.btn-login {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+  border: none;
+  padding: 1rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 4rem 1rem;
+  background-image: url('images/fondo-lubricentro.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--color-texto);
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6); /* oscurece la imagen */
+  overflow: hidden;
+  min-height: 100vh; 
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 5rem;
+}
+
+.hero p {
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.btn-principal {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 2rem;       /* Espacio desde arriba */
+  margin-bottom: 3rem;    /*  Espacio desde abajo */
+  transition: transform 0.2s; 
+}
+
+.btn-principal:hover {
+  transform: scale(1.1);
+}
+
+.botones-secundarios {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-secundario {
+  background-color: var(--color-gris);
+  border: none;
+  padding: 1.5rem 2.5rem;
+  cursor: pointer;
+  color: var(--color-texto);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .botones-secundarios {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.footer {
+  background-color: #111;
+  color: var(--color-texto);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--color-acento);
+}
+
+.footer a {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--color-acento);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+section {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.productos h2,
+.servicios h2,
+.testimonios h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.grid-productos,
+.grid-servicios,
+.grid-testimonios {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.card-producto,
+.item-servicio,
+.card-testimonio {
+  background-color: var(--color-gris);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  width: 200px;
+  color: var(--color-texto);
+}
+.formulario-reserva {
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.form-container {
+  max-width: 600px;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form input,
+form select {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+}
+
+form label {
+  text-align: left;
+  font-weight: bold;
+}
+
+.form-botones {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.form-botones button {
+  padding: 0.7rem 1.5rem;
+  font-weight: bold;
+  border: 1px solid var(--color-texto);
+  background-color: transparent;
+  color: var(--color-texto);
+  cursor: pointer;
+}
+
+.form-botones .btn-principal {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+  border: none;
+}
+
+/* Estilos para las secciones de productos y servicios  */
+.tarjeta-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.card {
+  background-color: var(--color-gris);
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  max-width: 300px;
+  flex: 1 1 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.card h2 {
+  color: var(--color-acento);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(255, 204, 0, 0.3);
+}
+
+/* Sección de llamado a la acción */
+.cta {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.cta .btn-principal {
+  padding: 1rem 2.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* Mejoras responsive para grillas y tarjetas */
+@media (max-width: 768px) {
+  .tarjeta-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lubricentro Renault</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo-container">
+        <img src="images/renault-logo.png" alt="Logo Renault" class="logo" />
+        <span class="marca">Lubricentro Renault</span>
+      </div>
+      <nav class="nav">
+        <a href="reserva.html">Reservar Turno</a>
+        <a href="servicios.html" class="nav-link">Servicios</a>
+        <a href="#">Reservas</a>
+        <a href="#">Contacto</a>
+        <button class="btn-login">Iniciar Sesión</button>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <h1>Bienvenido a Lubricentro Renault</h1>
+      <p>Gestiona tus turnos de manera fácil y rápida.</p>
+      <button class="btn-principal" id="btnReservar">Reservar Ahora</button>
+
+      <div class="botones-secundarios">
+        <button class="btn-secundario" onclick="location.href='productos.html'">
+          Ofertas
+        </button>
+        <button class="btn-secundario" onclick="location.href='servicios.html'">
+          Servicios
+        </button>
+        <button class="btn-secundario">Testimonios</button>
+      </div>
+      <section class="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="grid-productos">
+          <div class="card-producto">
+            <p>Aceite Sintético</p>
+          </div>
+          <div class="card-producto">
+            <p>Filtro de Aceite</p>
+          </div>
+          <div class="card-producto">
+            <p>Bujías de Encendido</p>
+          </div>
+        </div>
+        <button class="btn-principal" id="btnVerMas">Ver Más</button>
+      </section>
+
+      <section class="servicios">
+        <h2>Servicios Ofrecidos</h2>
+        <div class="grid-servicios">
+          <div class="item-servicio">
+            <p>Cambio de Aceite</p>
+          </div>
+          <div class="item-servicio">
+            <p>Limpieza de Filtro</p>
+          </div>
+          <div class="item-servicio">
+            <p>Revisión de Niveles</p>
+          </div>
+        </div>
+        <button class="btn-principal" id="linkServicios">Consultar</button>
+      </section>
+
+      <section class="testimonios">
+        <h2>Testimonios de Clientes</h2>
+        <div class="grid-testimonios">
+          <div class="card-testimonio">
+            <p>"Excelente atención y rapidez"</p>
+          </div>
+          <div class="card-testimonio">
+            <p>"Muy profesional, lo recomiendo"</p>
+          </div>
+          <div class="card-testimonio">
+            <p>"Volveré sin dudas"</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Lubricentro Renault. Todos los derechos reservados.</p>
+      <a href="#" class="footer-link">Términos y condiciones</a>
+    </div>
+  </footer>
+</html>

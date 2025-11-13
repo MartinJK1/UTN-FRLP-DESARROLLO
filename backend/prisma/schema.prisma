@@ -1,0 +1,141 @@
+
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-1.1.x", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum VehicleStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum ServiceCategory {
+  MANTENIMIENTO
+  REPARACION
+  DIAGNOSTICO
+  LIMPIEZA
+  OTROS
+}
+
+enum ReservationStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
+enum UserRole {
+  USER
+  ADMIN
+  MECHANIC
+}
+
+// Modelo de Usuario
+model User {
+  id           Int        @id @default(autoincrement())
+  name         String
+  email        String     @unique
+  phone        String? // Permitir null para el teléfono
+  password     String     // Se asume que se almacenará la contraseña hasheada
+  role         UserRole   @default(USER) // Cambiado a UserRole
+  isActive     Boolean    @default(true) // Añadido campo isActive
+  isVerified   Boolean    @default(false) // Verificación de email
+  verificationToken   String?   // Token único para verificación
+  verificationExpires DateTime? // Expiración del token
+  passwordResetToken   String?   // Token para recuperación de contraseña
+  passwordResetExpires DateTime? // Expiración del token de recuperación
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  vehicles     Vehicle[]  // Un usuario puede tener múltiples vehículos
+  reservations Reservation[] // Un usuario puede tener múltiples reservas
+  serviceHistory ServiceHistory[] // Un usuario puede tener múltiples servicios en el historial
+}
+
+// Modelo de Vehículo
+model Vehicle {
+  id           Int        @id @default(autoincrement())
+  license      String     @unique // Patente del vehículo
+  brand        String
+  model        String
+  year         Int
+  color        String?
+  status       VehicleStatus @default(ACTIVE) // Cambiado a VehicleStatus
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  userId       Int
+  user         User       @relation(fields: [userId], references: [id]) // Relación con el usuario propietario
+  reservations Reservation[] // Un vehículo puede tener múltiples reservas
+  serviceHistory ServiceHistory[] // Un vehículo puede tener múltiples servicios en el historial
+}
+
+// Modelo de Servicio
+model Service {
+  id           Int            @id @default(autoincrement())
+  name         String
+  description  String
+  category     ServiceCategory // Cambiado a ServiceCategory
+  price        Float
+  duration     Int            // Duración en minutos
+  isActive     Boolean        @default(true)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  reservations Reservation[]  // Un servicio puede estar en múltiples reservas
+  serviceHistory ServiceHistory[] // Un servicio puede estar en múltiples historiales
+}
+
+// Modelo de Reserva
+model Reservation {
+  id          Int              @id @default(autoincrement())
+  date        String           // Fecha de la reserva (YYYY-MM-DD)
+  time        String           // Hora de la reserva (HH:MM)
+  status      ReservationStatus @default(PENDING) // Cambiado a ReservationStatus
+  notes       String?
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  
+  userId      Int
+  user        User             @relation(fields: [userId], references: [id]) // Relación con el usuario que hace la reserva
+  
+  vehicleId   Int
+  vehicle     Vehicle          @relation(fields: [vehicleId], references: [id]) // Relación con el vehículo de la reserva
+  
+  serviceId   Int // Cambiado de serviceType a serviceId para relacionar con el modelo Service
+  service     Service          @relation(fields: [serviceId], references: [id]) // Relación con el servicio reservado
+  
+  // Relación con el historial de servicios
+  serviceHistory ServiceHistory[] @relation("ReservationServiceHistory")
+}
+
+// Modelo de Historial de Servicios
+model ServiceHistory {
+  id              Int      @id @default(autoincrement())
+  fechaServicio   DateTime @default(now()) // Fecha y hora exacta del servicio
+  resultado       String   // Completado, Pendiente, Cancelado, Requiere Repuestos
+  observaciones   String   // Observaciones del mecánico
+  repuestos       String?  // Repuestos utilizados (opcional)
+  kilometraje     Int      // Kilometraje del vehículo al momento del servicio
+  mecanico        String   // Nombre del mecánico que registró el servicio
+  registradoPor   String   // Usuario que registró el servicio (ADMIN o MECHANIC)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relaciones
+  userId          Int      // ID del propietario del vehículo al momento de la reserva
+  user            User     @relation(fields: [userId], references: [id])
+  
+  vehicleId       Int      // ID del vehículo
+  vehicle         Vehicle  @relation(fields: [vehicleId], references: [id])
+  
+  serviceId       Int      // ID del servicio realizado
+  service         Service  @relation(fields: [serviceId], references: [id])
+  
+  reservationId   Int?     // ID de la reserva original (opcional, puede ser null si se registra sin reserva)
+  reservation     Reservation? @relation("ReservationServiceHistory", fields: [reservationId], references: [id])
+}

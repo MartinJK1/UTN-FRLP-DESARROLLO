@@ -1,0 +1,22 @@
+services:
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+      target: production # Usa la etapa de 'production'
+    env_file:
+      - ./Frontend/.env # Carga las variables desde la carpeta del frontend
+    ports:
+      - "80:80" # Nginx sirve en el puerto 80
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: production # Usa la etapa de 'production'
+    env_file:
+      - ./backend/.env # Carga las variables desde la carpeta del backend
+    ports:
+      - "3000:3000"

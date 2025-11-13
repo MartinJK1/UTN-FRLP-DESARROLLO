@@ -1,0 +1,87 @@
+/* Toasts */
+.toast-container {
+  pointer-events: none;
+}
+
+.toast-container .toast {
+  pointer-events: auto;
+}
+
+.toast-notification {
+  min-width: 300px;
+  max-width: 400px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border: none;
+  margin-bottom: 0.5rem;
+}
+
+.toast-notification .toast-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+.toast-notification .toast-body {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Colores por tipo */
+.toast-notification.bg-success .toast-header {
+  background-color: #198754 !important;
+}
+
+.toast-notification.bg-danger .toast-header {
+  background-color: #dc3545 !important;
+}
+
+.toast-notification.bg-warning .toast-header {
+  background-color: #ffc107 !important;
+  color: #000 !important;
+}
+
+.toast-notification.bg-warning .toast-body {
+  color: #000 !important;
+}
+
+.toast-notification.bg-info .toast-header {
+  background-color: #0dcaf0 !important;
+}
+
+/* Animacion entrada */
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.toast-notification.show {
+  animation: slideInUp 0.3s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .toast-container {
+    padding: 1rem;
+    left: 0;
+  }
+  
+  .toast-notification {
+    min-width: 280px;
+    max-width: 100%;
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* Boton cerrar */
+.toast-notification .btn-close-white {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.toast-notification.bg-warning .btn-close-white {
+  filter: invert(0) grayscale(0%) brightness(100%);
+}

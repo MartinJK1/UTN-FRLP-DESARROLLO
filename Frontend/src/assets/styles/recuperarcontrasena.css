@@ -1,0 +1,256 @@
+/* Contenedor principal */
+.recuperarcontrasena-container {
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Header */
+.recuperarcontrasena-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.recuperarcontrasena-header h1 {
+  color: var(--color-acento);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.recuperarcontrasena-header p {
+  color: var(--color-texto);
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* Contenedor del formulario */
+.recuperarcontrasena-formulario-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: var(--color-gris);
+  border-radius: 10px;
+  padding: 2rem;
+  border: 1px solid var(--color-acento);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Alertas */
+.recuperarcontrasena-alert-exito {
+  background-color: rgba(40, 167, 69, 0.1);
+  border: 1px solid #28a745;
+  color: #28a745;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.recuperarcontrasena-alert-error {
+  background-color: rgba(220, 53, 69, 0.1);
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+/* Labels del formulario */
+.recuperarcontrasena-form-label {
+  color: var(--color-acento);
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Input del formulario */
+.recuperarcontrasena-form-control {
+  background-color: var(--color-gris);
+  border: 1px solid var(--color-acento);
+  color: var(--color-texto);
+  padding: 0.75rem;
+  border-radius: 5px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.recuperarcontrasena-form-control:focus {
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, 0.25);
+  background-color: var(--color-gris);
+  color: var(--color-texto);
+}
+
+.recuperarcontrasena-form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Feedback de error */
+.recuperarcontrasena-feedback-invalid {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Botón principal */
+.recuperarcontrasena-boton-enviar {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+  border: none;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  transition: all 0.3s;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.recuperarcontrasena-boton-enviar:hover:not(:disabled) {
+  background-color: #e6b800;
+  color: var(--color-fondo);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.recuperarcontrasena-boton-enviar:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Spinner */
+.recuperarcontrasena-spinner {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+/* Link de volver al login */
+.recuperarcontrasena-texto-volver {
+  color: var(--color-texto);
+  opacity: 0.8;
+  margin: 0;
+  text-align: center;
+}
+
+.recuperarcontrasena-link-volver {
+  color: var(--color-acento);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.recuperarcontrasena-link-volver:hover {
+  color: #e6b800;
+  text-decoration: underline;
+}
+
+/* Información adicional */
+.recuperarcontrasena-info-adicional {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(255, 204, 0, 0.1);
+  border: 1px solid rgba(255, 204, 0, 0.3);
+  border-radius: 5px;
+  border-left: 4px solid var(--color-acento);
+}
+
+.recuperarcontrasena-info-titulo {
+  color: var(--color-acento);
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.recuperarcontrasena-info-lista {
+  color: var(--color-texto);
+  font-size: 0.9rem;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.recuperarcontrasena-info-lista li {
+  margin-bottom: 0.25rem;
+}
+
+/* Estilos para React Hook Form */
+.recuperarcontrasena-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.recuperarcontrasena-form-group .form-label {
+  color: var(--color-acento);
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.recuperarcontrasena-form-group .form-control {
+  background-color: var(--color-gris);
+  border: 1px solid var(--color-acento);
+  color: var(--color-texto);
+  padding: 0.75rem;
+  border-radius: 5px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.recuperarcontrasena-form-group .form-control:focus {
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, 0.25);
+  background-color: var(--color-gris);
+  color: var(--color-texto);
+}
+
+.recuperarcontrasena-form-group .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.recuperarcontrasena-form-group .form-control.is-invalid {
+  border-color: #dc3545;
+}
+
+.recuperarcontrasena-form-group .invalid-feedback {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Botón con efectos hover */
+.recuperarcontrasena-boton-enviar:hover {
+  transform: scale(1.05);
+}
+
+.recuperarcontrasena-boton-enviar:active {
+  transform: scale(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .recuperarcontrasena-container {
+    padding: 1rem;
+  }
+  
+  .recuperarcontrasena-header h1 {
+    font-size: 2rem;
+  }
+  
+  .recuperarcontrasena-formulario-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .recuperarcontrasena-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .recuperarcontrasena-formulario-container {
+    padding: 1.25rem;
+  }
+  
+  .recuperarcontrasena-boton-enviar {
+    font-size: 1rem;
+    padding: 0.875rem 1.5rem;
+  }
+}

@@ -1,0 +1,156 @@
+/* Boton personalizado */
+
+.custom-btn {
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-family: inherit;
+  outline: none;
+}
+
+/* Tamaños */
+.custom-btn--small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.custom-btn--medium {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+.custom-btn--large {
+  padding: 1.2rem 2.5rem;
+  font-size: 1.2rem;
+}
+
+/* Variantes */
+.custom-btn--primary {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+}
+
+.custom-btn--primary:hover {
+  transform: scale(1.05);
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+}
+
+.custom-btn--primary:active,
+.custom-btn--primary:focus,
+.custom-btn--primary:focus-visible {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+  transform: scale(1.02);
+}
+
+.custom-btn--secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-texto);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.custom-btn--secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-texto);
+  transform: scale(1.02);
+}
+
+.custom-btn--secondary:active,
+.custom-btn--secondary:focus,
+.custom-btn--secondary:focus-visible {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-texto);
+  transform: scale(1.02);
+}
+
+/* Estados */
+.custom-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.custom-btn--primary:disabled {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+}
+
+.custom-btn--secondary:disabled {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-texto);
+}
+
+/* Ancho completo */
+.custom-btn--full {
+  width: 100%;
+}
+
+/* Tamaños modulares */
+.custom-btn--xs {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.custom-btn--sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.custom-btn--lg {
+  padding: 1.2rem 2.5rem;
+  font-size: 1.2rem;
+}
+
+.custom-btn--xl {
+  padding: 1.5rem 3rem;
+  font-size: 1.3rem;
+}
+
+/* Anchos */
+.custom-btn--w-auto {
+  width: auto;
+}
+
+.custom-btn--w-fit {
+  width: fit-content;
+}
+
+/* Alturas */
+.custom-btn--h-xs {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+.custom-btn--h-sm {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+.custom-btn--h-md {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.custom-btn--h-lg {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .custom-btn--medium {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .custom-btn--large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+}

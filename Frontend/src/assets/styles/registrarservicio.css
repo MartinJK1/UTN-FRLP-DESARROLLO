@@ -1,0 +1,385 @@
+/* Registrar servicio */
+
+/* Modal */
+.registrarservicio-modal-header {
+  background-color: var(--color-fondo);
+  border-bottom: 2px solid var(--color-acento);
+  color: var(--color-texto);
+}
+
+.registrarservicio-modal-header .modal-title {
+  color: var(--color-acento);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.registrarservicio-modal-body {
+  background-color: var(--color-gris);
+  color: var(--color-texto);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.registrarservicio-modal-footer {
+  background-color: var(--color-gris);
+  border-top: 1px solid var(--color-acento);
+  padding: 1rem;
+}
+
+.registrarservicio-modal-footer .btn {
+  margin-left: 0.5rem;
+}
+
+/* Ajustes para el modal en pantallas pequeñas */
+@media (max-width: 768px) {
+  .registrarservicio-modal-body {
+    max-height: 60vh;
+  }
+  
+  .registrarservicio-modal-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .registrarservicio-modal-footer .btn {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* Contenedor principal */
+.registrarservicio-container {
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Header */
+.registrarservicio-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.registrarservicio-header h1 {
+  color: var(--color-acento);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.registrarservicio-header p {
+  color: var(--color-texto);
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.registrarservicio-botones {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.registrarservicio-boton-volver {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.registrarservicio-boton-volver:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.registrarservicio-boton-volver i {
+  margin-right: 0.5rem;
+}
+
+/* Alert de acceso denegado */
+.registrarservicio-alert-denegado {
+  background-color: rgba(220, 53, 69, 0.1);
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  margin-bottom: 1.5rem;
+}
+
+/* Card de información de reserva */
+.registrarservicio-card-reserva {
+  background-color: var(--color-gris);
+  border: 1px solid var(--color-acento);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.registrarservicio-card-reserva-header {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 9px 9px 0 0;
+}
+
+.registrarservicio-card-reserva-header i {
+  margin-right: 0.5rem;
+}
+
+.registrarservicio-card-reserva-body {
+  color: var(--color-texto);
+  padding: 1.5rem;
+}
+
+.registrarservicio-card-reserva-body p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.registrarservicio-card-reserva-body strong {
+  color: var(--color-acento);
+  font-weight: bold;
+}
+
+/* Alert de éxito */
+.registrarservicio-alert-exito {
+  background-color: rgba(40, 167, 69, 0.1);
+  border: 1px solid #28a745;
+  color: #28a745;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.registrarservicio-alert-exito i {
+  margin-right: 0.5rem;
+}
+
+/* Card del formulario */
+.registrarservicio-card-formulario {
+  background-color: var(--color-gris);
+  border: 1px solid var(--color-acento);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.registrarservicio-card-formulario-header {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 9px 9px 0 0;
+}
+
+.registrarservicio-card-formulario-header i {
+  margin-right: 0.5rem;
+}
+
+.registrarservicio-card-formulario-body {
+  padding: 2rem;
+}
+
+.registrarservicio-card-formulario-body .form-control::placeholder {
+  color: #747373; 
+  opacity: 1;
+}
+
+/* Labels del formulario */
+.registrarservicio-form-label {
+  color: var(--color-acento);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Inputs y selects del formulario */
+.registrarservicio-form-control {
+  background-color: var(--color-gris);
+  border: 1px solid var(--color-acento);
+  color: var(--color-texto);
+  padding: 0.75rem;
+  border-radius: 5px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.registrarservicio-form-control:focus {
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, 0.25);
+  background-color: var(--color-gris);
+  color: var(--color-texto);
+}
+
+.registrarservicio-form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.registrarservicio-form-control option {
+  background-color: var(--color-gris);
+  color: var(--color-texto);
+}
+
+/* Textarea específico */
+.registrarservicio-textarea {
+  background-color: var(--color-gris);
+  border: 1px solid var(--color-acento);
+  color: var(--color-texto);
+  padding: 0.75rem;
+  border-radius: 5px;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.registrarservicio-textarea:focus {
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, 0.25);
+  background-color: var(--color-gris);
+  color: var(--color-texto);
+}
+
+/* Feedback de error */
+.registrarservicio-feedback-invalid {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Alert de información del servicio */
+.registrarservicio-alert-info {
+  background-color: rgba(13, 202, 240, 0.1);
+  border: 1px solid #0dcaf0;
+  color: #0dcaf0;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.registrarservicio-alert-info h6 {
+  color: #0dcaf0;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.registrarservicio-alert-info h6 i {
+  margin-right: 0.5rem;
+}
+
+.registrarservicio-alert-info p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.registrarservicio-alert-info p:last-child {
+  margin-bottom: 0;
+}
+
+.registrarservicio-alert-info strong {
+  color: #0dcaf0;
+  font-weight: bold;
+}
+
+/* Botón principal */
+.registrarservicio-boton-guardar {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+  border: none;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.registrarservicio-boton-guardar:hover:not(:disabled) {
+  background-color: #e6b800;
+  color: var(--color-fondo);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.registrarservicio-boton-guardar:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.registrarservicio-boton-guardar i {
+  margin-right: 0.5rem;
+}
+
+/* Spinner */
+.registrarservicio-spinner {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+/* Grid del botón */
+.registrarservicio-d-grid {
+  display: grid;
+  gap: 0.5rem;
+}
+
+/* Badge de estado */
+.registrarservicio-badge-completado {
+  background-color: #28a745;
+  color: white;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Responsive para Registrar Servicio */
+@media (max-width: 768px) {
+  .registrarservicio-container {
+    padding: 1rem;
+  }
+  
+  .registrarservicio-header h1 {
+    font-size: 2rem;
+  }
+  
+  .registrarservicio-header p {
+    font-size: 1rem;
+  }
+  
+  .registrarservicio-card-reserva-body,
+  .registrarservicio-card-formulario-body {
+    padding: 1rem;
+  }
+  
+  .registrarservicio-form-control,
+  .registrarservicio-textarea {
+    padding: 0.625rem;
+  }
+  
+  .registrarservicio-boton-guardar {
+    font-size: 1rem;
+    padding: 0.875rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .registrarservicio-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .registrarservicio-card-reserva-body p,
+  .registrarservicio-alert-info p {
+    font-size: 0.85rem;
+  }
+  
+  .registrarservicio-form-label {
+    font-size: 0.9rem;
+  }
+  
+  .registrarservicio-boton-guardar {
+    padding: 0.75rem 1.25rem;
+  }
+}

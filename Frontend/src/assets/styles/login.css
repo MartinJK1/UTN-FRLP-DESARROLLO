@@ -1,0 +1,151 @@
+/* Contenedor principal del login */
+.login-container {
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Header del formulario */
+.login-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.login-header h1 {
+  color: var(--color-acento);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-header p {
+  color: var(--color-texto);
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* Contenedor del formulario */
+.login-form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: var(--color-gris);
+  border-radius: 10px;
+  padding: 2rem;
+  border: 1px solid var(--color-acento);
+}
+
+/* Estilos para alertas */
+.login-alert {
+  margin-bottom: 1.5rem;
+}
+
+.login-alert.danger {
+  background-color: rgba(220, 53, 69, 0.1);
+  border: 1px solid #dc3545;
+  color: #dc3545;
+}
+
+/* Estilos para formulario */
+.login-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.login-form-label {
+  color: var(--color-acento);
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.login-form-control {
+  background-color: var(--color-gris);
+  border: 1px solid var(--color-acento);
+  color: var(--color-texto);
+  padding: 0.75rem;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-form-control:focus {
+  background-color: #404040;
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, 0.25);
+  color: var(--color-texto);
+  outline: none;
+}
+
+.login-form-control:hover {
+  background-color: #3a3a3a;
+  color: var(--color-texto);
+}
+
+.login-form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+}
+
+.login-form-control:focus::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Feedback de validación */
+.login-form-feedback {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Los estilos del botón ahora están en customButton.css */
+
+/* Enlaces */
+.login-link {
+  color: var(--color-acento);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.login-link:hover {
+  color: #e6b800;
+  text-decoration: underline;
+}
+
+.login-text {
+  color: var(--color-texto);
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Centrado de texto */
+.login-text-center {
+  text-align: center;
+}
+
+/* Espaciado */
+.login-mb-3 {
+  margin-bottom: 1rem;
+}
+
+.login-mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive para Login */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 1rem;
+  }
+  
+  .login-header h1 {
+    font-size: 2rem;
+  }
+  
+  .login-form-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+}

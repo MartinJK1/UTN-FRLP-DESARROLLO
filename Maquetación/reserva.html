@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulario de Reserva</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo-container">
+        <img src="images/renault-logo.png" alt="Logo Renault" class="logo" />
+        <span class="marca">Lubricentro Renault</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="reservas.html">Reservas</a>
+        <a href="#">Contacto</a>
+        <button class="btn-login">Iniciar Sesión</button>
+      </nav>
+    </header>
+
+    <main class="formulario-reserva">
+      <div class="form-container">
+        <h1>Formulario de Reserva</h1>
+        <form>
+          <label>Nombre Completo</label>
+          <input
+            type="text"
+            placeholder="Ingresa tu nombre completo"
+            required
+          />
+
+          <label>Teléfono</label>
+          <input
+            type="tel"
+            placeholder="Ingresa tu número de teléfono"
+            required
+          />
+
+          <label>DNI</label>
+          <input type="text" placeholder="Ingresa tu DNI" required />
+
+          <label>Servicio</label>
+          <select required>
+            <option disabled selected>—Tipo Servicio—</option>
+            <option>Cambio de Aceite</option>
+            <option>Limpieza de Filtro</option>
+            <option>Revisión de Niveles</option>
+          </select>
+
+          <label>Fecha</label>
+          <input type="date" required />
+
+          <label>Vehículo</label>
+          <input type="text" placeholder="—Patente del vehículo—" required />
+
+          <div class="form-botones">
+            <button type="reset">Limpiar</button>
+            <button type="submit" class="btn-principal">
+              Confirmar Reserva
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 Lubricentro Renault. Todos los derechos reservados.</p>
+      <a href="#">Términos y condiciones</a>
+      <p>Contacto: info@lubricentrenault.com</p>
+    </footer>
+  </body>
+</html>

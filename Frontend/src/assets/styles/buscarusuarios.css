@@ -1,0 +1,303 @@
+
+/* Contenedor principal de buscar usuarios */
+.buscarusuarios-container {
+  padding: 2rem;
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Header de buscar usuarios */
+.buscarusuarios-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.buscarusuarios-header h1 {
+  color: var(--color-acento);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.buscarusuarios-header h3 {
+  color: var(--color-texto);
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* Alertas de acceso denegado */
+.buscarusuarios-alert-danger {
+  margin-bottom: 1.5rem;
+}
+
+.buscarusuarios-alert-danger i {
+  margin-right: 0.5rem;
+}
+
+/* Card de formulario de búsqueda */
+.buscarusuarios-card-busqueda {
+  background-color: var(--color-gris);
+  border: 1px solid var(--color-acento);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.buscarusuarios-card-busqueda .card-body {
+  padding: 1.5rem;
+}
+
+/* Labels del formulario */
+.buscarusuarios-form-label {
+  color: var(--color-acento);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.buscarusuarios-form-label i {
+  margin-right: 0.5rem;
+}
+
+/* Input de búsqueda */
+.buscarusuarios-form-control {
+  background-color: var(--color-gris);
+  border: 1px solid var(--color-acento);
+  color: var(--color-texto);
+  padding: 0.75rem;
+  border-radius: 5px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.buscarusuarios-form-control:focus {
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, 0.25);
+  background-color: var(--color-gris);
+  color: var(--color-texto);
+}
+
+.buscarusuarios-form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Sección de búsqueda de usuarios */
+.buscarusuarios-busqueda-usuarios {
+  margin-bottom: 2rem;
+}
+
+.buscarusuarios-resultados-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.buscarusuarios-resultados-titulo {
+  color: var(--color-acento);
+  margin: 0;
+}
+
+.buscarusuarios-resultados-titulo i {
+  margin-right: 0.5rem;
+}
+
+.buscarusuarios-badge-busqueda {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+/* Resultados de usuarios */
+.buscarusuarios-resultados-usuarios {
+  margin-bottom: 2rem;
+}
+
+.buscarusuarios-alert-info {
+  background-color: rgba(13, 202, 240, 0.1);
+  border: 1px solid #0dcaf0;
+  color: #0dcaf0;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.buscarusuarios-alert-info i {
+  margin-right: 0.5rem;
+}
+
+/* Lista de usuarios */
+.buscarusuarios-lista-usuarios {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Tarjetas de usuario */
+.buscarusuarios-usuario-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 204, 0, 0.3);
+  transition: all 0.3s;
+  margin-bottom: 0.5rem;
+}
+
+.buscarusuarios-usuario-card:hover {
+  border-color: var(--color-acento);
+  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.buscarusuarios-usuario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+}
+
+.buscarusuarios-usuario-nombre {
+  font-size: 1.2rem;
+  color: var(--color-acento);
+  font-weight: bold;
+}
+
+.buscarusuarios-usuario-rol .badge {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.buscarusuarios-usuario-info {
+  margin-bottom: 0.75rem;
+}
+
+.buscarusuarios-cliente-info p {
+  color: var(--color-texto);
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.buscarusuarios-cliente-info strong {
+  color: var(--color-acento);
+}
+
+.buscarusuarios-text-flex-start {
+  text-align: left;
+}
+
+/* Acciones de usuario */
+.buscarusuarios-usuario-acciones {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.buscarusuarios-boton-accion {
+  transition: all 0.3s;
+  border-radius: 5px;
+  padding: 0.5rem;
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buscarusuarios-boton-accion:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.buscarusuarios-boton-ver {
+  border-color: #0d6efd;
+  color: #0d6efd;
+  background-color: transparent;
+}
+
+.buscarusuarios-boton-ver:hover {
+  background-color: #0d6efd;
+  color: white;
+  border-color: #0d6efd;
+}
+
+.buscarusuarios-boton-editar {
+  border-color: #ffc107;
+  color: #ffc107;
+  background-color: transparent;
+}
+
+.buscarusuarios-boton-editar:hover {
+  background-color: #ffc107;
+  color: #222;
+  border-color: #ffc107;
+}
+
+.buscarusuarios-boton-eliminar {
+  border-color: #dc3545;
+  color: #dc3545;
+  background-color: transparent;
+}
+
+.buscarusuarios-boton-eliminar:hover {
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+/* Responsive para Buscar Usuarios */
+@media (max-width: 768px) {
+  .buscarusuarios-container {
+    padding: 1rem;
+  }
+  
+  .buscarusuarios-header h1 {
+    font-size: 2rem;
+  }
+  
+  .buscarusuarios-header h3 {
+    font-size: 1rem;
+  }
+  
+  .buscarusuarios-resultados-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .buscarusuarios-usuario-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .buscarusuarios-usuario-acciones {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .buscarusuarios-boton-accion {
+    flex: 1;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .buscarusuarios-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .buscarusuarios-usuario-card {
+    padding: 1rem;
+  }
+  
+  .buscarusuarios-usuario-acciones {
+    flex-direction: column;
+  }
+  
+  .buscarusuarios-boton-accion {
+    width: 100%;
+    justify-content: center;
+  }
+}

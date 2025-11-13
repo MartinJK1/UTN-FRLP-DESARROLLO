@@ -1,0 +1,307 @@
+/* Productos */
+.productos-page {
+  background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+  min-height: 100vh;
+}
+
+/* Hero section */
+.productos-hero {
+  position: relative;
+  padding: 6rem 2rem 4rem;
+  background: linear-gradient(135deg, rgba(255, 204, 0, 0.1), rgba(0, 0, 0, 0.9)),
+              url('/limpieza-motor.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.productos-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.8) 0%, 
+    rgba(255, 204, 0, 0.1) 50%, 
+    rgba(0, 0, 0, 0.9) 100%);
+  pointer-events: none;
+}
+
+.productos-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 204, 0, 0.15), transparent 60%);
+}
+
+.productos-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.productos-hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.text-accent {
+  color: var(--color-acento);
+  background: linear-gradient(135deg, var(--color-acento), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.productos-hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Products Grid Section */
+.productos-grid-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #1a1a1a, #0a0a0a);
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.producto-grid-item {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CTA */
+.productos-cta-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, rgba(255, 204, 0, 0.05), rgba(0, 0, 0, 0.8));
+  position: relative;
+  overflow: hidden;
+}
+
+.productos-cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 204, 0, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.productos-cta-box {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(40, 40, 40, 0.9), rgba(30, 30, 30, 0.9));
+  border: 2px solid rgba(255, 204, 0, 0.3);
+  border-radius: 24px;
+  padding: 4rem 3rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.productos-cta-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--color-acento), #e6b800);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  font-size: 2.5rem;
+  color: #000;
+  box-shadow: 0 10px 30px rgba(255, 204, 0, 0.4);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 30px rgba(255, 204, 0, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 204, 0, 0.6);
+  }
+}
+
+.productos-cta-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.5px;
+}
+
+.productos-cta-text {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-productos-cta {
+  background: linear-gradient(135deg, var(--color-acento), #e6b800);
+  color: #000;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  box-shadow: 0 8px 24px rgba(255, 204, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-productos-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-productos-cta:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.btn-productos-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(255, 204, 0, 0.5);
+}
+
+.btn-productos-cta:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive para Productos */
+@media (max-width: 1200px) {
+  .productos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .productos-hero {
+    padding: 4rem 1.5rem 3rem;
+  }
+  
+  .productos-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .productos-hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .productos-grid-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .productos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .productos-cta-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .productos-cta-box {
+    padding: 3rem 2rem;
+  }
+  
+  .productos-cta-title {
+    font-size: 2rem;
+  }
+  
+  .productos-cta-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .productos-hero-title {
+    font-size: 2rem;
+  }
+  
+  .productos-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .productos-cta-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+  
+  .productos-cta-title {
+    font-size: 1.75rem;
+  }
+  
+  .productos-cta-box {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .btn-productos-cta {
+    font-size: 1rem;
+    padding: 0.85rem 2rem;
+  }
+}

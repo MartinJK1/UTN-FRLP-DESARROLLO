@@ -1,0 +1,412 @@
+/* Reservar */
+
+/* Contenedor principal de reservas */
+.reservar-container {
+  background-image: url('/fondo-lubricentro.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Título de la página */
+.reservar-titulo {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.reservar-titulo h1 {
+  font-size: 2.5rem;
+  color: var(--color-acento);
+  margin-bottom: 0.5rem; /* Ajustado para coincidir con Mis Vehículos */
+  font-weight: bold; /* Añadido para que sea negrita */
+}
+
+.reservar-titulo p {
+  font-size: 1.2rem;
+  color: var(--color-texto);
+}
+
+/* Contenedor principal con dos columnas */
+.reservar-contenedor-principal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Calendario */
+.reservar-columna-calendario {
+  background-color: var(--color-gris);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.reservar-columna-calendario h2 {
+  color: var(--color-acento);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+/* Encabezado del calendario con navegación */
+.reservar-encabezado-calendario {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--color-gris);
+  border-radius: 10px;
+  border: 1px solid var(--color-acento);
+}
+
+.reservar-encabezado-calendario h3 {
+  margin: 0;
+  color: var(--color-acento);
+  font-weight: bold;
+}
+
+/* Botones de navegación del calendario */
+.reservar-nav-button {
+  border-color: var(--color-acento);
+  color: var(--color-acento);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid var(--color-acento);
+}
+
+.reservar-nav-button:hover {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+}
+
+/* Días de la semana */
+.reservar-dias-semana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.reservar-dia-semana {
+  text-align: center;
+  font-weight: bold;
+  color: var(--color-acento);
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Cuadrícula del calendario */
+.reservar-cuadricula-calendario {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* Indicador de carga del mes */
+.reservar-cargando-mes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--color-acento);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.reservar-dia-calendario {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #444;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  color: var(--color-texto);
+}
+
+.reservar-dia-calendario:hover {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+  transform: scale(1.1);
+}
+
+.reservar-dia-vacio {
+  background-color: transparent;
+  cursor: default;
+}
+
+.reservar-dia-vacio:hover {
+  background-color: transparent;
+  transform: none;
+}
+
+.reservar-dia-pasado {
+  background-color: #666;
+  color: #999;
+  cursor: default;
+}
+
+.reservar-dia-pasado:hover {
+  background-color: #666;
+  color: #999;
+  transform: none;
+}
+
+.reservar-dia-completo {
+  background-color: #dc3545;
+  color: white;
+  cursor: default;
+}
+
+.reservar-dia-completo:hover {
+  background-color: #dc3545;
+  color: white;
+  transform: none;
+}
+
+.reservar-dia-seleccionado {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+}
+
+/* Leyenda del calendario */
+.reservar-leyenda-calendario {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.reservar-leyenda-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-texto);
+}
+
+.reservar-leyenda-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 0.25rem;
+}
+
+.reservar-leyenda-color.dia-normal {
+  background-color: #444;
+}
+
+.reservar-leyenda-color.dia-con-reservas {
+  background-color: #ff6b6b;
+}
+
+.reservar-leyenda-color.dia-completo {
+  background-color: #dc3545;
+}
+
+.reservar-leyenda-color.dia-seleccionado {
+  background-color: var(--color-acento);
+}
+
+.reservar-leyenda-color.dia-pasado {
+  background-color: #666;
+}
+
+/* Formulario */
+.reservar-columna-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.reservar-columna-formulario h2 {
+  color: var(--color-acento);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+/* Secciones del formulario */
+.reservar-seccion-formulario {
+  background-color: var(--color-gris);
+  padding: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.reservar-seccion-formulario h3 {
+  color: var(--color-acento);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+/* Campos del formulario */
+.reservar-form-group {
+  margin-bottom: 1rem;
+}
+
+.reservar-form-label {
+  font-weight: bold;
+  color: var(--color-texto);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.reservar-form-control {
+  background-color: var(--color-gris);
+  border: 1px solid var(--color-acento);
+  color: var(--color-texto);
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reservar-form-control:focus {
+  background-color: #404040;
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, 0.25);
+  color: var(--color-texto);
+  outline: none;
+}
+
+.reservar-form-control:hover {
+  background-color: #3a3a3a;
+  color: var(--color-texto);
+}
+
+.reservar-form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+}
+
+.reservar-form-control:focus::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.reservar-form-control[readonly] {
+  background-color: var(--color-gris);
+  color: var(--color-texto);
+  cursor: default;
+}
+
+.reservar-form-control[readonly]:hover {
+  background-color: var(--color-gris);
+  color: var(--color-texto);
+}
+
+/* Feedback de validación */
+.reservar-form-feedback {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Botón de envío */
+.reservar-submit-button {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+  border: none;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  transition: transform 0.2s;
+  width: 100%;
+  cursor: pointer;
+}
+
+.reservar-submit-button:hover {
+  transform: scale(1.05);
+}
+
+.reservar-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Alertas */
+.reservar-alert {
+  margin-bottom: 1.5rem;
+}
+
+.reservar-alert.success {
+  background-color: rgba(40, 167, 69, 0.1);
+  border: 1px solid #28a745;
+  color: #28a745;
+}
+
+.reservar-alert.warning {
+  background-color: rgba(255, 193, 7, 0.1);
+  border: 1px solid #ffc107;
+  color: #ffc107;
+}
+
+/* Información de vehículos */
+.reservar-vehiculos-info {
+  margin-bottom: 1rem;
+  color: var(--color-texto);
+  font-size: 0.9rem;
+}
+
+/* Horarios ocupados */
+.reservar-horario-ocupado {
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Responsive para Reservar */
+@media (max-width: 768px) {
+  .reservar-container {
+    padding: 1rem;
+  }
+  
+  .reservar-titulo h1 {
+    font-size: 2rem;
+  }
+  
+  .reservar-contenedor-principal {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .reservar-columna-calendario,
+  .reservar-seccion-formulario {
+    padding: 1.5rem;
+  }
+
+  .reservar-dias-semana,
+  .reservar-cuadricula-calendario {
+    gap: 0.25rem;
+  }
+
+  .reservar-dia-calendario {
+    font-size: 0.8rem;
+  }
+
+  .reservar-leyenda-calendario {
+    gap: 1rem;
+  }
+}
