@@ -1,8 +1,31 @@
 // Configuración de APIs para el proyecto
+// Vite solo expone variables que empiezan con VITE_ y deben estar disponibles en tiempo de build
+const getBaseURL = () => {
+  const envUrl = import.meta.env.VITE_API_URL;
+  
+  // Debug: mostrar qué URL se está usando (solo en desarrollo)
+  if (import.meta.env.DEV) {
+    console.log('🔧 API Config - VITE_API_URL:', envUrl);
+    console.log('🔧 API Config - Todas las vars:', import.meta.env);
+  }
+  
+  if (envUrl) {
+    // Limpiar la URL (quitar barras finales) y agregar /api
+    const cleanUrl = envUrl.replace(/\/+$/, ''); // Quita una o más barras al final
+    return `${cleanUrl}/api`;
+  }
+  
+  // Fallback para desarrollo local
+  return 'http://localhost:3000/api';
+};
+
 const API_CONFIG = {
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api',
+  baseURL: getBaseURL(),
   timeout: 8000 // Timeout general
 };
+
+// Log en producción también para debug (se puede quitar después)
+console.log('🌐 API Base URL:', API_CONFIG.baseURL);
 
 
 // Endpoints de la API

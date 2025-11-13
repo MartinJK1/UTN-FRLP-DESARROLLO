@@ -28,20 +28,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Lista de orígenes permitidos (whitelist)
-// Permite múltiples URLs separadas por comas en FRONTEND_URL
-const parseFrontendUrls = (urls: string | undefined): string[] => {
-  if (!urls) return [];
-  return urls.split(',').map(url => url.trim()).filter(Boolean);
-};
-
 const whitelist = [
-  // URLs de desarrollo local
   'http://localhost:5173', // Desarrollo de Frontend (Vite)
   'http://localhost',      // Frontend de Producción (Docker con Nginx en puerto 80)
   'http://localhost:3000',
-  // URLs de producción desde variables de entorno
-  ...parseFrontendUrls(process.env.FRONTEND_URL)
-].filter(Boolean); // Filtra valores undefined/null
+  process.env.FRONTEND_URL,
+  process.env.VITE_API_BASE_URL
+].filter(Boolean); // Elimina valores undefined/null
 
 // Configuración de CORS
 const corsOptions = {
@@ -49,10 +42,9 @@ const corsOptions = {
     // Permite peticiones sin origen (como las de Postman o apps móviles)
     if (!origin) return callback(null, true);
     
-    // Log para debugging (solo en desarrollo)
-    if (process.env.NODE_ENV !== 'production') {
-      console.log('🔍 CORS: Origen recibido:', origin);
-      console.log('🔍 CORS: Whitelist:', whitelist);
+    // Permite dominios de Vercel (cualquier subdominio de vercel.app)
+    if (origin.includes('.vercel.app') || origin.includes('vercel.app')) {
+      return callback(null, true);
     }
     
     if (whitelist.indexOf(origin) !== -1) {
@@ -60,23 +52,17 @@ const corsOptions = {
       callback(null, true);
     } else {
       // Si no, rechazarla
-      console.error('❌ CORS: Origen no permitido:', origin);
+      console.warn(`⚠️  CORS bloqueado para origen: ${origin}`);
       callback(new Error('No permitido por CORS'));
     }
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  preflightContinue: false,
-  optionsSuccessStatus: 204
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
 
 // MIDDLEWARES GLOBALES - Se ejecutan en todas las peticiones
-// Configurar helmet para no bloquear CORS
-app.use(helmet({
-  crossOriginResourcePolicy: { policy: "cross-origin" },
-  crossOriginEmbedderPolicy: false
-}));
+app.use(helmet());        // Seguridad básica (headers de seguridad)
 app.use(cors(corsOptions)); // Permite peticiones desde el frontend con configuración específica
 app.use(morgan('dev'));   // Logs de peticiones HTTP (para debugging)
 app.use(express.json());  // Permite recibir JSON en el body de las peticiones
@@ -107,6 +93,23 @@ console.log(' Ruta /api/admin registrada');
 app.get('/', (req, res) => {
   res.json({
     message: 'API del Lubricentro Renault funcionando!',
+    endpoints: {
+      auth: '/api/auth',
+      users: '/api/users',
+      vehicles: '/api/vehicles',
+      reservations: '/api/reservations',
+      services: '/api/services',
+      serviceHistory: '/api/services/history',
+      admin: '/api/admin'
+    }
+  });
+});
+
+// Ruta /api para evitar 404
+app.get('/api', (req, res) => {
+  res.json({
+    message: 'API del Lubricentro Renault',
+    version: '1.0.0',
     endpoints: {
       auth: '/api/auth',
       users: '/api/users',
