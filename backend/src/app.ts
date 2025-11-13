@@ -28,11 +28,19 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Lista de orígenes permitidos (whitelist)
+// Permite múltiples URLs separadas por comas en FRONTEND_URL
+const parseFrontendUrls = (urls: string | undefined): string[] => {
+  if (!urls) return [];
+  return urls.split(',').map(url => url.trim()).filter(Boolean);
+};
+
 const whitelist = [
+  // URLs de desarrollo local
   'http://localhost:5173', // Desarrollo de Frontend (Vite)
   'http://localhost',      // Frontend de Producción (Docker con Nginx en puerto 80)
   'http://localhost:3000',
-  process.env.FRONTEND_URL
+  // URLs de producción desde variables de entorno
+  ...parseFrontendUrls(process.env.FRONTEND_URL)
 ].filter(Boolean); // Filtra valores undefined/null
 
 // Configuración de CORS
@@ -41,21 +49,34 @@ const corsOptions = {
     // Permite peticiones sin origen (como las de Postman o apps móviles)
     if (!origin) return callback(null, true);
     
+    // Log para debugging (solo en desarrollo)
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('🔍 CORS: Origen recibido:', origin);
+      console.log('🔍 CORS: Whitelist:', whitelist);
+    }
+    
     if (whitelist.indexOf(origin) !== -1) {
       // Si el origen está en la lista blanca, permitir la petición
       callback(null, true);
     } else {
       // Si no, rechazarla
+      console.error('❌ CORS: Origen no permitido:', origin);
       callback(new Error('No permitido por CORS'));
     }
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  preflightContinue: false,
+  optionsSuccessStatus: 204
 };
 
 // MIDDLEWARES GLOBALES - Se ejecutan en todas las peticiones
-app.use(helmet());        // Seguridad básica (headers de seguridad)
+// Configurar helmet para no bloquear CORS
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: "cross-origin" },
+  crossOriginEmbedderPolicy: false
+}));
 app.use(cors(corsOptions)); // Permite peticiones desde el frontend con configuración específica
 app.use(morgan('dev'));   // Logs de peticiones HTTP (para debugging)
 app.use(express.json());  // Permite recibir JSON en el body de las peticiones
